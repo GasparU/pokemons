@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import FormPoke from '../components/Pokedex/FormPoke'
 import PokeContainer from '../components/Pokedex/PokeContainer'
-import useFetch from '../hooks/useFetch';
-import "./styles/Pokedex.css"
+import "./styles/pokedex.css"
 import header from "../../public/header.png";
 
 

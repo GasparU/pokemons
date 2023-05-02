@@ -1,0 +1,19 @@
+.pagination {
+  width: 80%;
+  margin-left: 8%;
+}
+.pagination-previous {
+  background: white;
+  text-decoration: none;
+  border-radius: 10px;
+}
+.pagination-next {
+  background: white;
+  text-decoration: none;
+  border-radius: 10px;
+}
+.pagination-link {
+  background: white;
+  text-decoration: none;
+  margin-radius: 15px;
+}

@@ -1,0 +1,21 @@
+.home__container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  height: 100vh;
+}
+.home__img {
+  height: 151px;
+  max-width: 676px;
+  margin: 0 auto;
+}
+.home__title {
+  font-size: 40px;
+  color: red;
+  font-weight: 700;
+}
+.home__text {
+  font-size: 20px;
+  font-weight: 600;
+}

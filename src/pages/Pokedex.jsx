@@ -7,20 +7,9 @@ import header from "../../public/header.png";
 
 
 const Pokedex = () => {
-    const url2 = "https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0"
+    const urlBase = "https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0"
 
-    const [fornUrl, setFormUrl] = useState(url2)
-
-    // const urlRandom = valueType ? `/type/${valueType}` : "/pokemon?limit=100000&offset=0"
-
-    // const url = `https://pokeapi.co/api/v2${urlRandom}`
-
-    // const [pokeCard, getpokemon] = useFetch(`${url}`)
-
-    // useEffect(() => {
-    //     getpokemon()
-    // }, [])
-
+    const [fornUrl, setFormUrl] = useState(urlBase)
 
     const { trainerName } = useSelector(state => state)
 
@@ -33,10 +22,9 @@ const Pokedex = () => {
             </div>
             <div className='pokedex__title'>
                 <p><span className='pokedex__title1'>Welcome {trainerName} </span><span className='pokedex__title2'>here you can find your favorite pokemon</span></p>
-                <FormPoke setFormUrl={setFormUrl} url2={url2} />
+                <FormPoke setFormUrl={setFormUrl} urlBase={urlBase} />
             </div>
             <PokeContainer
-                // pokeCard={pokeCard}
                 fornUrl={fornUrl}
             />
         </div>

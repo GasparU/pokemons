@@ -4,14 +4,11 @@ import "./styles/pokeCard.css"
 import { useNavigate } from 'react-router-dom'
 
 const PokeCard = ({ poke }) => {
-    console.log(poke)
-
     const [pokeDato, getPokemon] = useFetch(poke.url)
 
     useEffect(() => {
         getPokemon()
     }, [])
-
 
     const navigate = useNavigate()
 
@@ -21,12 +18,10 @@ const PokeCard = ({ poke }) => {
     }
 
     return (
-
-
         <div className='card__container__all'>
 
             <form className='card__container' onClick={handleId}>
-                <div className={`card__fond `}>
+                <div className={`card__fond bg-${pokeDato?.types[0].type.name}`}>
                     <img className='card_pokemon' src={pokeDato?.sprites.other["official-artwork"].front_default} />
                 </div>
                 <div className='card__title'>

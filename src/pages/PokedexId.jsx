@@ -6,7 +6,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { ProgressBar } from 'react-bootstrap';
 import header from "../../public/header.png";
 
-
 const PokedexId = () => {
 
     const { name } = useParams()
@@ -45,7 +44,6 @@ const PokedexId = () => {
                         <hr />
                         <h1>{name} </h1>
                         <hr />
-
                     </div>
                     <div className='id__data'>
                         <div className='id__title'>

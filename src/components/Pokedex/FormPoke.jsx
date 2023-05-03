@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import "./styles/formpoke.css"
 import { useNavigate } from 'react-router-dom'
 import useFetch from '../../hooks/useFetch'
-const FormPoke = ({ setFormUrl, url2 }) => {
+const FormPoke = ({ setFormUrl, urlBase }) => {
 
     const inputPoke = useRef()
 
@@ -32,7 +32,7 @@ const FormPoke = ({ setFormUrl, url2 }) => {
                 <button className="btn__formPoke">Search</button>
             </form>
             <select onChange={handleChange} className='form__select'  >
-                <option value={url2}>all Pokemons</option>
+                <option value={urlBase}>all Pokemons</option>
                 {
                     types?.results.map(type =>
                         <option

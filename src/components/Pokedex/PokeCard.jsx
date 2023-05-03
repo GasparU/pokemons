@@ -20,35 +20,39 @@ const PokeCard = ({ poke }) => {
     return (
         <div className='card__container__all'>
 
-            <form className='card__container' onClick={handleId}>
-                <div className={`card__fond bg-${pokeDato?.types[0].type.name}`}>
+            <form className={`card__container color-${pokeDato?.types[0].type.name}`} onClick={handleId}>
+                <header className={`card__fond bg-${pokeDato?.types[0].type.name}`}>
                     <img className='card_pokemon' src={pokeDato?.sprites.other["official-artwork"].front_default} />
-                </div>
+                </header>
                 <div className='card__title'>
                     <div className='card__info'>
-                        <h1>{pokeDato?.name}</h1>
+                        <h1 className={`card__title-name color-${pokeDato?.types[0].type.name}`}>{pokeDato?.name}</h1>
                         <p className='card__data'>Tipo</p>
-                        <p className='card__data'>{pokeDato?.types[0].type.name} </p>
+                        <div className='card__data-title'>
+                            <p className='card__data'>{pokeDato?.types[0].type.name} </p>
+                            <p className='card__data2'>{pokeDato?.types[1] ? pokeDato?.types[1].type.name : null}  </p>
+
+                        </div>
                     </div>
                     <div >
                         <div className='card__habilities'>
                             <div className='card__item'>
                                 <p className='card__data'>{pokeDato?.stats[0].stat.name.toUpperCase()}</p>
-                                <p className='card__data'>{pokeDato?.stats[0].base_stat}</p>
+                                <p className={`card__data color-${pokeDato?.types[0].type.name} card__data-weight`}>{pokeDato?.stats[0].base_stat}</p>
                             </div>
                             <div className='card__item'>
                                 <p className='card__data'>{pokeDato?.stats[1].stat.name.toUpperCase()}</p>
-                                <p className='card__data'>{pokeDato?.stats[1].base_stat}</p>
+                                <p className={`card__data color-${pokeDato?.types[0].type.name} card__data-weight`}>{pokeDato?.stats[1].base_stat}</p>
                             </div>
                         </div>
                         <div className='card__habilities'>
                             <div className='card__item'>
                                 <p className='card__data'>{pokeDato?.stats[2].stat.name.toUpperCase()}</p>
-                                <p className='card__data'>{pokeDato?.stats[2].base_stat}</p>
+                                <p className={`card__data color-${pokeDato?.types[0].type.name} card__data-weight`}>{pokeDato?.stats[2].base_stat}</p>
                             </div>
                             <div className='card__item'>
                                 <p className='card__data'>{pokeDato?.stats[5].stat.name.toUpperCase()}</p>
-                                <p className='card__data'>{pokeDato?.stats[5].base_stat}</p>
+                                <p className={`card__data color-${pokeDato?.types[0].type.name} card__data-weight`}>{pokeDato?.stats[5].base_stat}</p>
                             </div>
                         </div>
                     </div>

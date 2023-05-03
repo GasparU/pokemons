@@ -4,11 +4,24 @@
   justify-content: center;
   text-align: center;
 }
+.pokedex__title-text {
+  position: relative;
+}
+.btn__toggle {
+  position: absolute;
+  margin-top: -40px;
+  margin-left: 40px;
+}
+
 .pokedex_fond {
   height: 150px;
+  /* position: relative; */
 }
 .container_div {
   background: #e5e5e5;
+}
+.container_div.true {
+  background: #222;
 }
 .pokedex_fond1 {
   height: 100px;
@@ -43,6 +56,11 @@
   color: black;
   font-weight: 700;
 }
+.pokedex__title2.true {
+  font-size: 30px;
+  color: white;
+  font-weight: 700;
+}
 .id__poke {
   position: relative;
 }
@@ -60,4 +78,46 @@
 .buttom__prev:hover {
   font-size: 24px;
   color: white;
+}
+
+#toggle {
+  position: relative;
+  display: block;
+  width: 64px;
+  height: 32px;
+  border-radius: 160px;
+  background: #222;
+  transition: 0.5s;
+  cursor: pointer;
+  box-shadow: inset 0 8px 60px rgb(0, 0, 0, 0.1),
+    inset 0 8px 8px rgb(0, 0, 0, 0.1), inset 0 -4px 4px rgb(0, 0, 0, 0.1);
+}
+#toggle .indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(to bottom, #444, #222);
+  border-radius: 50%;
+  transform: scale(0.9);
+  box-shadow: 0 8px 40px rgb(0, 0, 0, 0.5),
+    inset 0 4px 4px rgb(255, 255, 255, 0.2),
+    inset 0 -4px 4px rgb(255, 255, 255, 0.2);
+  transition: 0.5s;
+}
+#toggle.true .indicator {
+  left: 32px;
+}
+#toggle.true {
+  position: relative;
+  display: block;
+  width: 64px;
+  height: 32px;
+  border-radius: 160px;
+  background: white;
+  transition: 0.5s;
+  cursor: pointer;
+  box-shadow: inset 0 8px 60px rgb(0, 0, 0, 0.1),
+    inset 0 8px 8px rgb(0, 0, 0, 0.1), inset 0 -4px 4px rgb(0, 0, 0, 0.1);
 }

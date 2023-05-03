@@ -3,7 +3,7 @@ import useFetch from '../../hooks/useFetch'
 import "./styles/pokeCard.css"
 import { useNavigate } from 'react-router-dom'
 
-const PokeCard = ({ poke }) => {
+const PokeCard = ({ poke, style }) => {
     const [pokeDato, getPokemon] = useFetch(poke.url)
 
     useEffect(() => {
@@ -20,19 +20,29 @@ const PokeCard = ({ poke }) => {
     return (
         <div className='card__container__all'>
 
-            <form className={`card__container color-${pokeDato?.types[0].type.name}`} onClick={handleId}>
+            <form className={`card__container ${style} color-${pokeDato?.types[0].type.name}`} onClick={handleId}>
                 <header className={`card__fond bg-${pokeDato?.types[0].type.name}`}>
                     <img className='card_pokemon' src={pokeDato?.sprites.other["official-artwork"].front_default} />
                 </header>
                 <div className='card__title'>
                     <div className='card__info'>
                         <h1 className={`card__title-name color-${pokeDato?.types[0].type.name}`}>{pokeDato?.name}</h1>
-                        <p className='card__data'>Tipo</p>
                         <div className='card__data-title'>
                             <p className='card__data'>{pokeDato?.types[0].type.name} </p>
-                            <p className='card__data2'>{pokeDato?.types[1] ? pokeDato?.types[1].type.name : null}  </p>
+                            {
+                                pokeDato?.types[1] ? (
+                                    <p className='card__data2'>
+
+                                        <span className='card__data3'>{pokeDato?.types[1].type.name} </span>
+                                    </p>
+                                )
+                                    :
+                                    null
+                            }
 
                         </div>
+                        <p className='card__data'>Tipo</p>
+
                     </div>
                     <div >
                         <div className='card__habilities'>

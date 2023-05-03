@@ -1,13 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
-import useFetch from "./../../hooks/useFetch";
 
 const paginationPokex = createSlice({
-  name: "pagination",
-  initialState: "nombre2",
+  name: "style",
+  initialState: false,
   reducers: {
-    setPagination: (state, action) => state,
+    setActive: (state, action) => state,
   },
 });
-export const { setPagination } = paginationPokex.actions;
+export const { setActive } = paginationPokex.actions;
 
 export default paginationPokex.reducer;

@@ -12,12 +12,11 @@ const PokedexId = () => {
     const url = `https://pokeapi.co/api/v2/pokemon/${name}`
 
     const [pokeId, getAllPokemon] = useFetch(url)
-
+    console.log(pokeId)
     useEffect(() => {
         getAllPokemon()
     }, [name])
 
-    console.log(pokeId)
     const navigate = useNavigate()
     const handleBack = () => {
         navigate("/pokedex")
@@ -35,14 +34,14 @@ const PokedexId = () => {
             <a className={`pagination-previous buttom__prev `} onClick={handleBack} >  Regresar</a>
 
             <div className='id__container'>
-                <div className='id__title_capital'>
+                <div className={`id__title_capital bg-${pokeId?.types[0].type.name}`}>
                     <img className='id__poke__logo' src={pokeId?.sprites.other.dream_world.front_default} />
                 </div>
                 <div className='id__container__card'>
-                    <div className='id__container__id'>#{pokeId?.id}</div>
+                    <div className={`id__container__id color-${pokeId?.types[0].type.name} `}>#{pokeId?.id}</div>
                     <div className='id__title__name'>
                         <hr />
-                        <h1>{name} </h1>
+                        <h1 className={`id__container_title color-${pokeId?.types[0].type.name}`} >{name} </h1>
                         <hr />
                     </div>
                     <div className='id__data'>
@@ -61,7 +60,6 @@ const PokedexId = () => {
                             <h2>Tipo</h2>
                             <div className='id__title_data2'>
                                 <p className='id__title_dataP'>{pokeId?.types[0].type.name}</p>
-                                {/* <p className='id__title_dataP2'>{pokeId?.types[1] ? pokeId?.types[1].type.name : null}</p> */}
                                 {pokeId?.types[1] ? <p className='id__title_dataP2'>{pokeId?.types[1].type.name}</p> : null}
                             </div>
                         </div>

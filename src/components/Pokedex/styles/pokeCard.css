@@ -15,16 +15,15 @@
   text-transform: capitalize;
 }
 .card__data-weight {
-  font-weight: 700;
+  font-weight: 600;
 }
 .card__data-title {
   display: flex;
+  width: 100%;
   justify-content: center;
+  font-weight: 600;
 }
-.card__data2 {
-  content: "/";
-  margin-left: 1em;
-}
+
 .card__container {
   border: 10px solid;
   width: 261px;
@@ -35,10 +34,14 @@
   cursor: pointer;
   transition: transform 200ms ease;
 }
-.card__container:hover {
-  /* cursor: pointer; */
-  transform: scale(1.05);
+.card__container.true {
   filter: saturate(1.8);
+}
+
+.card__container:hover {
+  transform: scale(1.05);
+  transition: transform 500ms ease;
+  filter: saturate(2.5);
 }
 .card__fond {
   position: relative;
@@ -254,4 +257,11 @@
 .card__data {
   margin: 0;
   padding: 0;
+}
+.card__data2 {
+  margin: 0;
+  padding: 0;
+}
+.card__data3 {
+  padding-left: 1em;
 }

@@ -12,19 +12,17 @@ const PokeContainer = ({ fornUrl, style }) => {
     useEffect(() => {
         getAllPokemons()
     }, [fornUrl])
-
+    console.log(pokeCard)
     const totalproducts = pokeCard?.results ? pokeCard?.results.length : pokeCard?.pokemon.length
 
-    // console.log(pokeCard.results)
 
     const productsPerPage = 50
-
 
     const lastIndex = currentPage * productsPerPage
     const firstIndex = lastIndex - productsPerPage
 
     return (
-        <div >
+        <div className="poke__container">
             <Pagination productsPerPage={productsPerPage} currentPage={currentPage} setCurrentPage={setCurrentPage} totalproducts={totalproducts} />
             <div className="poke-container">
                 {

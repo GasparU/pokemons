@@ -35,7 +35,7 @@ const PokedexId = () => {
 
             <div className='id__container'>
                 <div className={`id__title_capital bg-${pokeId?.types[0].type.name}`}>
-                    <img className='id__poke__logo' src={pokeId?.sprites.other.dream_world.front_default} />
+                    <img className='id__poke__logo' src={pokeId?.sprites.other["official-artwork"].front_default} />
                 </div>
                 <div className='id__container__card'>
                     <div className={`id__container__id color-${pokeId?.types[0].type.name} `}>#{pokeId?.id}</div>
@@ -106,7 +106,7 @@ const PokedexId = () => {
                 <div className='id__footer_container'>
                     <div className='id__title_footer'>Movements</div>
                     <div className='id__moves'>{
-                        pokeId?.moves.map(pok => (<p key={pok.id} className='id__moves_move'>{pok.move.name}</p>))
+                        pokeId?.moves.map(pok => (<p key={pok.move.url} className='id__moves_move'>{pok.move.name}</p>))
                     }</div>
                 </div>
             </div>

@@ -15,5 +15,6 @@
 .pagination-link {
   background: white;
   text-decoration: none;
+  margin-top: 10px;
   margin-radius: 15px;
 }

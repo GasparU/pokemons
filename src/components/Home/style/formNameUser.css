@@ -1,0 +1,15 @@
+.formName__input {
+  padding: 10px 20px;
+}
+.btn__formName {
+  background: red;
+  color: white;
+  border: none;
+  font-size: 20px;
+  padding: 10px 20px;
+  margin-left: 1%;
+}
+.form__container-user {
+  display: flex;
+  margin-bottom: 20px;
+}

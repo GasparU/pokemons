@@ -27,7 +27,6 @@ const Pokedex = () => {
         <div className={`container_div ${style}`}>
             <div className='pokedex_fond'>
                 <div className='pokedex_fond1'>
-
                 </div>
                 <div className='pokedex_fond2'>
 

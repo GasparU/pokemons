@@ -3,9 +3,9 @@ import { useNavigate, useParams } from 'react-router-dom'
 import useFetch from '../hooks/useFetch'
 import "./styles/pokeId.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { ProgressBar } from 'react-bootstrap';
 import header from "../../public/header.png";
-import PokedexIdItem from '../components/PokedexIdItem';
+import PokedexIdItem from '../components/Pokedex/PokedexIdItem';
+import Error from '../components/Pokedex/Error';
 
 const PokedexId = () => {
 
@@ -34,17 +34,21 @@ const PokedexId = () => {
             </div>
             <a className={`pagination-previous buttom__prev `} onClick={handleBack} >  Regresar</a>
             {
-                hasError ? <p>Error de pagina</p> :
-                    <PokedexIdItem pokeId={pokeId} />
+                hasError ? <Error /> :
+                    <>
+                        <PokedexIdItem pokeId={pokeId} />
+                        <div className='id__footer'>
+                            <div className='id__footer_container'>
+                                <div className='id__title_footer'>Movements</div>
+                                <div className='id__moves'>{
+                                    pokeId?.moves.map(pok => (<p key={pok.move.url} className='id__moves_move'>{pok.move.name}</p>))
+                                }</div>
+                            </div>
+                        </div>
+
+                    </>
             }
-            <div className='id__footer'>
-                <div className='id__footer_container'>
-                    <div className='id__title_footer'>Movements</div>
-                    <div className='id__moves'>{
-                        pokeId?.moves.map(pok => (<p key={pok.move.url} className='id__moves_move'>{pok.move.name}</p>))
-                    }</div>
-                </div>
-            </div>
+
 
         </div>
     )

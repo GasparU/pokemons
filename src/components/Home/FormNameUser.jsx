@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { setTrainerName } from "../../store/slices/trainerName.slice"
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import "./style/FormNameUser.css"
+import "./style/formNameUser.css"
 
 const FormNameUser = () => {
 

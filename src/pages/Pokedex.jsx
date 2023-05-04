@@ -6,6 +6,7 @@ import "./styles/pokedex.css"
 import header from "../../public/header.png";
 
 const Pokedex = () => {
+    const [currentPage, setCurrentPage] = useState(1)
     const urlBase = "https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0"
 
     const { trainerName } = useSelector(state => state)
@@ -41,10 +42,13 @@ const Pokedex = () => {
                     <p ><span className='pokedex__title1'>Welcome {trainerName} </span><span className={`pokedex__title2  ${style}`}>here you can find your favorite pokemon</span></p>
 
                 </div>
-                <FormPoke setFormUrl={setFormUrl} urlBase={urlBase} />
+                <FormPoke setFormUrl={setFormUrl} urlBase={urlBase} setCurrentPage={setCurrentPage} />
             </div>
             <PokeContainer style={style}
+
                 fornUrl={fornUrl}
+                setCurrentPage={setCurrentPage}
+                currentPage={currentPage}
             />
         </div>
     )

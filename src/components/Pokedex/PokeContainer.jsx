@@ -5,10 +5,10 @@ import { useEffect, useState } from "react"
 import "../../pages/styles/card.css"
 import useFetch from "../../hooks/useFetch"
 
-const PokeContainer = ({ fornUrl, style }) => {
+const PokeContainer = ({ fornUrl, style, currentPage, setCurrentPage }) => {
 
-    const [currentPage, setCurrentPage] = useState(1)
-    const [pokeCard, getAllPokemons] = useFetch(fornUrl)
+
+    const [pokeCard, getAllPokemons, hasError, isLoading] = useFetch(fornUrl)
     useEffect(() => {
         getAllPokemons()
     }, [fornUrl])
@@ -20,22 +20,27 @@ const PokeContainer = ({ fornUrl, style }) => {
 
     const lastIndex = currentPage * productsPerPage
     const firstIndex = lastIndex - productsPerPage
-
+    console.log(isLoading)
     return (
         <div className="poke__container">
-            <Pagination productsPerPage={productsPerPage} currentPage={currentPage} setCurrentPage={setCurrentPage} totalproducts={totalproducts} />
-            <div className="poke-container">
-                {
-                    (pokeCard?.results ?
-                        (
-                            pokeCard?.results.map(poke => <PokeCard style={style} key={poke.name} poke={poke} />).slice(firstIndex, lastIndex)
-                        )
-                        :
-                        (
-                            pokeCard?.pokemon.map(objPoke => <PokeCard style={style} key={objPoke.pokemon.name} poke={objPoke.pokemon} />).slice(firstIndex, lastIndex)
-                        ))
-                }
-            </div>
+            {
+                isLoading ? <p>Cargando.....</p> :
+                    <>
+                        <Pagination productsPerPage={productsPerPage} currentPage={currentPage} setCurrentPage={setCurrentPage} totalproducts={totalproducts} />
+                        <div className="poke-container">
+                            {
+                                (pokeCard?.results ?
+                                    (
+                                        pokeCard?.results.map(poke => <PokeCard style={style} key={poke.name} poke={poke} />).slice(firstIndex, lastIndex)
+                                    )
+                                    :
+                                    (
+                                        pokeCard?.pokemon.map(objPoke => <PokeCard style={style} key={objPoke.pokemon.name} poke={objPoke.pokemon} />).slice(firstIndex, lastIndex)
+                                    ))
+                            }
+                        </div>
+                    </>
+            }
         </div>
     )
 }

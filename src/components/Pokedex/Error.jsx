@@ -6,7 +6,7 @@ const Error = () => {
     return (
         <div className='error'>
             <div className='box'>
-                <div className='error__text'>Lo siento, debes ingresar solo nombres de pokemones</div>
+                <div className='error__text'>Solo debes ingresar nombres de pokemones, ENTIENDE!!!!!</div>
                 <img className='image' src={imagen} />
             </div>
         </div>
